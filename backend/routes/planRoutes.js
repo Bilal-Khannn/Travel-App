@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json("Here are your plans");
-});
+const { protect } = require("../middleware/authMiddleware");
+
+const { getPlan } = require("../controllers/planController");
+
+router.get("/", protect, getPlan);
 
 module.exports = router;

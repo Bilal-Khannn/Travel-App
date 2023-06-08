@@ -1,5 +1,7 @@
 const getPlan = (req, res) => {
-  res.json("Here are your plans");
+  res.json({
+    message: "Here is your plan",
+  });
 };
 
 module.exports = {

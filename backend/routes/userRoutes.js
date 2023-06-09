@@ -5,7 +5,10 @@ const {
   loginUser,
   resetPassword,
   sendEmail,
+  getUser,
 } = require("../controllers/userController");
+
+const { protect } = require("../middleware/authMiddleware");
 
 //register a new user
 router.post("/register", registerUser);
@@ -17,6 +20,9 @@ router.post("/login", loginUser);
 router.post("/reset", resetPassword);
 
 //email for reset password
-router.post("/email", sendEmail);
+router.post("/resetEmail", sendEmail);
+
+//get user details
+router.get("/getUser", protect, getUser);
 
 module.exports = router;

@@ -147,7 +147,7 @@ const resetPassword = asyncHandler(async (req, res) => {
 });
 
 // Desc@ Sends email with OTP for password reset
-// Route@ POST /api/users/email
+// Route@ POST /api/users/resetEmail
 const sendEmail = asyncHandler(async (req, res) => {
   const { email } = req.body;
 
@@ -174,6 +174,8 @@ const sendEmail = asyncHandler(async (req, res) => {
 
   //generate OTP
   const otp = Math.floor(100000 + Math.random() * 900000);
+
+  console.log(otp);
 
   //store otp in DB
   const newOTP = await OTP.create({
@@ -208,6 +210,30 @@ const sendEmail = asyncHandler(async (req, res) => {
   });
 });
 
+// @Desc Retrieve User details for the registered user
+// @GET api/users/getuser
+const getUser = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    res.status(400);
+    throw new Error("Email missing");
+  }
+
+  const userDetail = await User.findOne({ email });
+
+  if (!userDetail) {
+    res.status(400);
+    throw new Error("Could not find user");
+  }
+
+  res.json({
+    _id: userDetail.id,
+    name: userDetail.name,
+    email: userDetail.email,
+  });
+});
+
 //generate token for the user
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -220,4 +246,5 @@ module.exports = {
   loginUser,
   resetPassword,
   sendEmail,
+  getUser,
 };

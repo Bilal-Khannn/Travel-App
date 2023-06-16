@@ -5,13 +5,15 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon backend/server.js",
-    "client": "npm run dev --prefix frontend"
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Bilal Khan",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
@@ -20,6 +22,7 @@
     "nodemailer": "^6.9.3"
   },
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "nodemon": "^2.0.22"
   }
 }

@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const dotenv = require("dotenv").config();
 const colors = require("colors");
 const connectDB = require("./config/db");
@@ -7,6 +8,9 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 connectDB();
 
 const app = express();
+
+//enable cors for all routes
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

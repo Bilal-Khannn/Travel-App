@@ -101,14 +101,20 @@ const Register = () => {
 
           <label htmlFor="error" id="error" className="text-red-500"></label>
 
-          <button className="px-4 py-2 mt-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition delay-75">
+          <button
+            type="submit"
+            className="px-4 py-2 mt-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition delay-75"
+          >
             Sign up
           </button>
         </form>
 
         <div className="flex flex-col mt-4 justify-center items-center">
           <p>Already have an account?</p>
-          <button className="text-blue-500 font-semibold mt-2" type="submit">
+          <button
+            className="text-blue-500 font-semibold mt-2"
+            onClick={navigateLogin}
+          >
             Log in
           </button>
         </div>

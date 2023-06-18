@@ -43,7 +43,7 @@ const Nav = () => {
     <div className="flex justify-around p-6 bg-gray-200">
       {/* company logo  */}
       <div className="flex items-center">
-        <Link className="text-xl font-bold" to="/">
+        <Link className="text-2xl font-bold" to="/">
           WanderWise
         </Link>
       </div>
@@ -60,7 +60,7 @@ const Nav = () => {
         >
           Sign up
         </button>
-        {/* <button onClick={handleLogout}>Logout</button> */}
+        <button onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );

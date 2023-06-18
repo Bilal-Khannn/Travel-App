@@ -58,7 +58,7 @@ const Register = () => {
     navigate("/login");
   };
   return (
-    <div className="flex justify-center items-center h-screen flex-col">
+    <div className="flex justify-center items-center h-screen flex-col bg-gray-200">
       <div className="border p-8 rounded-xl bg-white shadow-xl w-1/2">
         <h1 className="text-3xl font-bold mb-6">Sign up</h1>
         <form

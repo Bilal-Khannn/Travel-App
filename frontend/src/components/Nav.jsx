@@ -13,11 +13,14 @@ const Nav = () => {
     const checkLogin = () => {
       const login = document.getElementById("login");
       const signup = document.getElementById("signup");
+      const logoutbutton = document.getElementById("logoutButton");
 
       if (user) {
         login.classList.add("hidden");
         signup.classList.add("hidden");
+        logoutbutton.classList.remove("hidden");
       } else {
+        logoutbutton.classList.add("hidden");
         login.classList.remove("hidden");
         signup.classList.remove("hidden");
       }
@@ -60,7 +63,9 @@ const Nav = () => {
         >
           Sign up
         </button>
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout} id="logoutButton">
+          Logout
+        </button>
       </div>
     </div>
   );

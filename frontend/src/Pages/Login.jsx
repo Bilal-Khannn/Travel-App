@@ -47,6 +47,7 @@ const Login = () => {
       dispatch(loginSuccess(res.data));
       localStorage.setItem("user", res.data);
       console.log(res.data);
+      navigate("/");
     } catch (error) {
       dispatch(loginFailure(error.response.data.message));
       err.textContent = error.response.data.message;

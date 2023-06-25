@@ -1,9 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { AiTwotoneStar } from "react-icons/ai";
 
@@ -26,12 +24,12 @@ export default function BasicCard() {
         height: "210px",
         width: "240px",
         borderRadius: "10%",
-        boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.2)",
+        // boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.2)",
       }}
     >
       <CardContent>
         <Typography
-          sx={{ fontSize: 20 }}
+          sx={{ fontSize: 20, color: "black" }}
           color="text.secondary"
           gutterBottom
           className="flex"
